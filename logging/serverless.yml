@@ -5,10 +5,10 @@ provider:
   runtime: nodejs12.x
   stage: dev
   region: eu-central-1
-  role: arn:aws:iam::<account_id>:role/myapp-logging-role
+  role: arn:aws:iam::139333950783:role/myapp-logging-role
 
 functions:
   dispatchErrors:
     handler: handler.dispatchErrors
     events:
-      - sns: arn:aws:sns:eu-central-1:<account_id>:PRODUCTION_ERRORS
+      - sns: arn:aws:sns:eu-central-1:139333950783:PRODUCTION_ERRORS

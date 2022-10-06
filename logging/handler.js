@@ -49,7 +49,7 @@ let generateEmailContent = (data, message) => {
       }
     },
     Source: "medvedevdenis12@gmail.com",
-    SourceArn: "arn:aws:ses:eu-central-1:885121665536:identity/medvedevdenis12@gmail.com",
+    SourceArn: "arn:aws:ses:eu-central-1:139333950783:identity/medvedevdenis12@gmail.com",
     Tags: [
       {
         Name: "sender",

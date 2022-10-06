@@ -11,7 +11,7 @@ const response = (statusCode, message) => {
 module.exports.createNotes = async event => {
   let data = JSON.parse(event.body);
   try {
-    // throw new Error("To many db connections")
+    throw new Error("To many db connections")
     // create note database call
     log({
       type: "INFO",
