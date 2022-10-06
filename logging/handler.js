@@ -1,7 +1,7 @@
 "use strict";
 const aws = require("aws-sdk");
-const cwl = new aws.CloudWatchLogs({ apiVersion: "2014-03-28", region: "us-east-1" });
-const ses = new aws.SES({ region: "us-east-1" });
+const cwl = new aws.CloudWatchLogs({ apiVersion: "2014-03-28", region: "eu-central-1" });
+const ses = new aws.SES({ region: "eu-central-1" });
 
 let generateEmailContent = (data, message) => {
   let events = data.events;
@@ -30,7 +30,7 @@ let generateEmailContent = (data, message) => {
 
   let emailContent = {
     Destination: {
-      ToAddresses: ["manojf.uom@gmail.com"]
+      ToAddresses: ["medvedevdenis12@gmail.com"]
     },
     Message: {
       Body: {
@@ -48,12 +48,12 @@ let generateEmailContent = (data, message) => {
         Data: subject
       }
     },
-    Source: "manojf.uom@gmail.com",
-    SourceArn: "arn:aws:ses:us-east-1:885121665536:identity/manojf.uom@gmail.com",
+    Source: "medvedevdenis12@gmail.com",
+    SourceArn: "arn:aws:ses:eu-central-1:885121665536:identity/medvedevdenis12@gmail.com",
     Tags: [
       {
         Name: "sender",
-        Value: "Manoj"
+        Value: "Denys"
       }
     ]
   };
@@ -93,7 +93,7 @@ module.exports.dispatchErrors = (event, context, cb) => {
   };
   cwl.describeMetricFilters(requestParams, (err, data) => {
     if (err) {
-      console.log("Error occured:", err);
+      console.log("Error occurred:", err);
     } else {
       getLogsAndSendEmail(message, data);
     }

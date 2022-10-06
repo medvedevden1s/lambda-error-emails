@@ -4,9 +4,9 @@ provider:
   name: aws
   runtime: nodejs12.x
   stage: dev
-  region: us-west-1
+  region: eu-central-1
   environment:
-    APP_NAME: My Notes App
+    APP_NAME: Prod logs
     APP_STAGE: ${opt:stage,self:provider.stage}
     SERVICE_NAME: Notes Service
 
@@ -23,4 +23,4 @@ functions:
     events:
       - http:
           path: notes/{id}
-          method: get          
+          method: get
